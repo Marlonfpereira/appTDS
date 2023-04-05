@@ -36,6 +36,6 @@ public class MainActivity extends AppCompatActivity {
         for (int i = valor-1; i > 0; i--) {
             valor = valor * i;
         }
-        return valor;
+        return valor==0?1:valor;
     }
 }
