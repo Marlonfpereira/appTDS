@@ -11,7 +11,7 @@
         android:id="@+id/textInputLayout"
         android:layout_width="409dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="144dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,14 +22,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:digits="1234567890"
-            android:inputType="number"/>
+            android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="488dp"
         android:text="Calcular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,16 +48,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/resCalc"
-        android:layout_width="165dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="56dp"
-        android:gravity="center"
-        android:textColor="?attr/actionMenuTextColor"
+    <ScrollView
+        android:layout_width="409dp"
+        android:layout_height="476dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/button">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/resCalc"
+                android:layout_width="327dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:textColor="?attr/actionMenuTextColor" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

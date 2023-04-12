@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.math.BigInteger;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,14 +30,15 @@ public class MainActivity extends AppCompatActivity {
             } catch (NumberFormatException e) {
                 System.out.println("Entrada inválida");
             }
-            resultado.setText(Integer.toString(calculaFatorial(valor)));
+            resultado.setText("" + calculaFatorial(valor));
         });
     }
 
-    int calculaFatorial(int valor) {
-        for (int i = valor-1; i > 0; i--) {
-            valor = valor * i;
+    BigInteger calculaFatorial(int valor) {
+        BigInteger fat = BigInteger.valueOf(1);
+        for (int i = valor; i > 0; i--) {
+            fat = fat.multiply(BigInteger.valueOf(i));
         }
-        return valor==0?1:valor;
+        return fat;
     }
 }
